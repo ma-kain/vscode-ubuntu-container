@@ -58,7 +58,7 @@ if __name__ == "__main__":
     print(exit)
     exit()
 
-    db_con = sl.connect('nse_india.db')
+    db_con = sl.connect('/workspaces/vscode-ubuntu-container/resource/nse_india.db')
 
     create_tables(db_con)
 

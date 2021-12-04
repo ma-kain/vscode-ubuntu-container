@@ -5,9 +5,6 @@ import datetime
 import one_time_data_loader
 
 
-current_year = 2021
-
-
 def import_into_db(data, sql, con, index):
     rows = []
     for row in data[1:]:
@@ -20,7 +17,7 @@ def import_into_db(data, sql, con, index):
 
 
 if __name__ == "__main__":
-    db_con = sl.connect('nse_india.db')
+    db_con = sl.connect('/workspaces/vscode-ubuntu-container/resource/nse_india.db')
     
     start, end = None, datetime.date.today()
 
@@ -30,8 +27,8 @@ if __name__ == "__main__":
 
     print(f'Start: {start}, End: {end}.')
 
-    if start > end:
-        print('Exit program as start is greater than end.')
+    if start >= end:
+        print('Exit program as start is not greater than end.')
         print(exit)
         exit()
     
