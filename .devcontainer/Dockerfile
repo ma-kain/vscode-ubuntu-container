@@ -6,7 +6,7 @@ FROM mcr.microsoft.com/vscode/devcontainers/base:0-${VARIANT}
 
 # [Optional] Uncomment this section to install additional OS packages.
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends build-essential python3.7 python3-pip python3-dev
+    && apt-get -y install --no-install-recommends build-essential python3.8.10 python3-pip python3-dev
 
 RUN pip3 -q install pip --upgrade
 
