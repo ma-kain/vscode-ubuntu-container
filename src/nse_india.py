@@ -105,15 +105,14 @@ class NseIndia:
     def _find_csv_content(html):
         _soup = BeautifulSoup(html, 'html.parser')
         _csv_content = _soup.find('div', {"id": "csvContentDiv"})
-        return _csv_content.getText()
+        return _csv_content.getText() if _csv_content else None
 
 
     def get_data(self, resource: NseResource, index: NseIndex, start: date, end: date):
         _url = self._url_builder.build(resource, index, start, end)
         _html = self._get_html(_url)
         _content = self._find_csv_content(_html)
-        _data = self._csv_content_parser.parse(_content)
-        return _data
+        return self._csv_content_parser.parse(_content) if _content else None
 
 
 def get_nifty50_price_hist(start: date, end: date):

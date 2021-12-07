@@ -2,7 +2,7 @@ import sqlite3 as sl
 import pandas as pd
 import nse_india
 import datetime
-from one_time_data_loader import *
+from csv_one_time_data_loader import *
 
 # Following resources and indices will be downloaded and imported into db
 resources = [
@@ -12,7 +12,14 @@ resources = [
 
 indices = [
     "NIFTY 50",
-    "NIFTY NEXT 50"
+    "NIFTY NEXT 50",
+    # "NIFTY AUTO",
+    # "NIFTY BANK",
+    # "NIFTY REALTY",
+    # "NIFTY INFRA",
+    # "NIFTY COMMODITIES",
+    # "NIFTY FMCG",
+    # "NIFTY PHARMA"
 ]
 
 
